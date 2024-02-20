@@ -1,0 +1,4 @@
+noah 18
+wilma 13
+lena 51
+jesper 50

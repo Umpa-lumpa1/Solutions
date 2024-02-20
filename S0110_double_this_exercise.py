@@ -27,9 +27,7 @@ Fortsæt derefter med den næste fil.
 """
 
 #  Write your function below this line.
-def double_this(number):
-    print(number*2)
-    double_number = number*2
-    return double_number
+print(double_this)
+
 # Here starts the main program. From the main program you can call your functions.
 print(double_this(3))
