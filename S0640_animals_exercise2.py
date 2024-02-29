@@ -83,15 +83,26 @@ class Dog(Animal):
     def __repr__(self):
         return f"Animal(name='{self.name}', sound='{self.sound}', height={self.height}, weight={self.weight}, legs={self.legs}, female={self.female}, tail_length={self.tail_length}, hunts_sheep={self.hunts_sheep})"
 
+    def wag_tail(self):
+        print(f"hunden {self.name} vifter med sin {self.tail_length}cm lange hale")
+
     def make_noise(self):
-        print("bark")
+        print(f"{self.sound}")
+
+def mate(mother, father):
+    #check gender.
+    #find att for the puppy
+    #make the puppy
+    #return the puppy
 
 
 animal1 = Animal(name="Lion", sound="Roar", height=1.2, weight=150, legs=4, female=False)
-hund = Dog("buba", "bark", 0.6, 60, 4, True, 32, False)
+hund1 = Dog("buba", "bark", 0.6, 60, 4, False, 20, False)
+hund2 = Dog("buba", "bark", 0.6, 60, 4, True, 20, False)
 
-hund.make_noise()
+hund1.make_noise()
 animal1.make_noise()
-
+hund1.wag_tail()
+mate(mother=hund2, father=hund1)
 print(animal1)
-print(hund)
+print(hund1)
