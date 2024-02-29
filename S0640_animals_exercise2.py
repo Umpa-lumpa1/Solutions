@@ -80,9 +80,18 @@ class Dog(Animal):
         self.tail_length = tail_length
         self.hunts_sheep = hunts_sheep
 
+    def __repr__(self):
+        return f"Animal(name='{self.name}', sound='{self.sound}', height={self.height}, weight={self.weight}, legs={self.legs}, female={self.female}, tail_length={self.tail_length}, hunts_sheep={self.hunts_sheep})"
+
+    def make_noise(self):
+        print("bark")
+
 
 animal1 = Animal(name="Lion", sound="Roar", height=1.2, weight=150, legs=4, female=False)
-hund = Dog("buba", "bark", 0.6, 60, 4, True, 32, False )
+hund = Dog("buba", "bark", 0.6, 60, 4, True, 32, False)
+
+hund.make_noise()
+animal1.make_noise()
 
 print(animal1)
 print(hund)
