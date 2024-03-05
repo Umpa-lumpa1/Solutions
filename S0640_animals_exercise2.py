@@ -74,6 +74,7 @@ class Animal:
     def make_noise(self):
         print("Roar")
 
+
 class Dog(Animal):
     def __init__(self, name: str, sound: str, height: float, weight: float, legs: int, female: bool, tail_length: int, hunts_sheep: bool):
         super().__init__(name, sound, height, weight, legs, female)
@@ -81,7 +82,7 @@ class Dog(Animal):
         self.hunts_sheep = hunts_sheep
 
     def __repr__(self):
-        return f"Animal(name='{self.name}', sound='{self.sound}', height={self.height}, weight={self.weight}, legs={self.legs}, female={self.female}, tail_length={self.tail_length}, hunts_sheep={self.hunts_sheep})"
+        return f"Dog(name='{self.name}', sound='{self.sound}', height={self.height}, weight={self.weight}, legs={self.legs}, female={self.female}, tail_length={self.tail_length}, hunts_sheep={self.hunts_sheep})"
 
     def wag_tail(self):
         print(f"hunden {self.name} vifter med sin {self.tail_length}cm lange hale")
@@ -89,11 +90,24 @@ class Dog(Animal):
     def make_noise(self):
         print(f"{self.sound}")
 
+
 def mate(mother, father):
-    #check gender.
-    #find att for the puppy
-    #make the puppy
-    #return the puppy
+    # check gender
+    if not mother.female or father.female:
+        return None
+    # find att for the puppy
+    name = "hub"
+    sound = "bark"
+    height = 0.3
+    weight = 2
+    legs = 4
+    female = False
+    tail_length = 10
+    hunts_sheep = True
+    # make the puppy
+    puppy = Dog(name, sound, height, weight, legs, female, tail_length, hunts_sheep)
+    # return the puppy
+    return puppy
 
 
 animal1 = Animal(name="Lion", sound="Roar", height=1.2, weight=150, legs=4, female=False)
@@ -103,6 +117,7 @@ hund2 = Dog("buba", "bark", 0.6, 60, 4, True, 20, False)
 hund1.make_noise()
 animal1.make_noise()
 hund1.wag_tail()
-mate(mother=hund2, father=hund1)
+print(mate(mother=hund2, father=hund1))
 print(animal1)
 print(hund1)
+print(hund2)
